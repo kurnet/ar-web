@@ -33,3 +33,11 @@ button {
     color: white;
     z-index: 999999;
 }
+
+.gpsinfo {
+    position: fixed;
+    top: 6%;
+    font-size: 1.25em;
+    color: white;
+    z-index: 999999;
+}
