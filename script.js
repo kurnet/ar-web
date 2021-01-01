@@ -13,7 +13,16 @@ function staticLoadPlaces() {
             location: {
                 lat: 22.472663,
                 lng: 114.226247,
-            }
+            },
+			model: 0
+        },
+		{
+            name: 'Articuno',
+            location: {
+                lat: 22.472549,
+                lng: 114.226472,
+            },
+			model: 1
         },
     ];
 }
@@ -70,7 +79,7 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
+        setModel(models[modelIndex], place.model);
 
         model.setAttribute('animation-mixer', '');
 
