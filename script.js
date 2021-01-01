@@ -106,7 +106,7 @@ AFRAME.registerComponent('rotation-reader', {
     console.log(this.el.object3D.position);
 	
 	const div = document.querySelector('.gpsinfo');
-    div.innerText = this.el.object3D.position;
+    div.innerText = "x: " + this.el.object3D.position.x + "; y: " + this.el.object3D.position.y;
 	
   }
 });
