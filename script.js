@@ -11,16 +11,16 @@ function staticLoadPlaces() {
         {
             name: 'Magnemite',
             location: {
-                lat: 22.472663,
-                lng: 114.226247,
+                lat: 22.472297,
+                lng: 114.229752,
             },
 			model: 0
         },
 		{
             name: 'Articuno',
             location: {
-                lat: 22.472549,
-                lng: 114.226472,
+                lat: 22.472877,
+                lng: 114.232935,
             },
 			model: 1
         },
