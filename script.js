@@ -82,6 +82,7 @@ function renderPlaces(places) {
         setModel(models[place.model], model);
 
         //model.setAttribute('animation-mixer', '');
+		model.setAttribute('maxDistance', 50);
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
