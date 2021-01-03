@@ -16,7 +16,8 @@ function staticLoadPlaces() {
                 lat: 22.472872,
                 lng: 114.232984,
             },
-			model: 0
+			model: 0,
+			id: 'first'
         },
 		{
             name: 'Articuno',
@@ -24,7 +25,8 @@ function staticLoadPlaces() {
                 lat: 22.368045,
                 lng: 114.110297,
             },
-			model: 1
+			model: 1,
+			id: 'second'
         },
     ];
 }
@@ -80,7 +82,8 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
+		model.setattribute('id', place.id);
+		
         setModel(models[place.model], model);
 
         //model.setAttribute('animation-mixer', '');
@@ -112,7 +115,7 @@ AFRAME.registerComponent('rotation-reader', {
     div.innerText = "x: " + this.el.object3D.position.x + "; z: " + this.el.object3D.position.z;
 	
 	const scene = document.querySelector('a-scene');
-	ent = scene.querySelector('a-entity');
+	ent = scene.querySelector('a-entity#first');
 	
 	console.log(ent);
 	div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
