@@ -113,7 +113,7 @@ function renderPlaces(places) {
     });
 }
 
-var _loaded = true;
+var _loaded = false;
 
 AFRAME.registerComponent('rotation-reader', {
   tick: function () {
@@ -156,6 +156,7 @@ AFRAME.registerComponent('rotation-reader', {
 AFRAME.registerComponent('gps-entity-place-added', {
 	init: function(details){
 		if(details.id == 'first'){
+			alert("Loaded");
 			_loaded = true;
 		}
 	}
