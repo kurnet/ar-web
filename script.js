@@ -142,7 +142,7 @@ AFRAME.registerComponent('rotation-reader', {
 		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
 		div.innerText += "\n Dist: " + dist + " m";
 		
-		div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+		div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
 		
 		//if(dist > 50){
 		//	ent.setAttribute('visible', false);
