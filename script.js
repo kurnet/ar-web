@@ -161,5 +161,5 @@ AFRAME.registerComponent('gps-entity-place-added', {
 			_loaded = true;
 		}
 	}
-}0);
+});
 
