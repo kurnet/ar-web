@@ -81,11 +81,8 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 		model.setAttribute('id', place.id);
-		if(place.id == 'first'){
-			model.setAttribute('gps-entity-place-added', '');
-		}
 		
         setModel(models[place.model], model);
 
@@ -97,14 +94,11 @@ function renderPlaces(places) {
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
-				
         });
 
         scene.appendChild(model);
     });
 }
-
-var _loaded = false;
 
 AFRAME.registerComponent('rotation-reader', {
   tick: function () {
@@ -123,26 +117,15 @@ AFRAME.registerComponent('rotation-reader', {
     div.innerText = "x: " + this.el.object3D.position.x + "; z: " + this.el.object3D.position.z;
 	
 	const scene = document.querySelector('a-scene');
+	ent = scene.querySelector('a-entity#first');
 	
-	//if(_loaded){
-		ent = scene.querySelector('a-entity#first');
-		//if(ent != null){
-			let objPos = ent.getAttribute('position');	
-			div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
-			
-			let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
-			div.innerText += "\n Dist: " + dist + " m";
-			
-			div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
-			
-		//}
-	//}
+	let objPos = ent.getAttribute('position');	
+	div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
+	
+	let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
+	div.innerText += "\n Dist: " + dist + " m";
+	
+	div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+	
   }
 });
-
-AFRAME.registerComponent('gps-entity-place-added', {
-	init: function(){
-		_loaded = true;
-	}
-});
-
