@@ -97,8 +97,8 @@ function renderPlaces(places) {
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
 			
-			let lat1 = 22.472872;
-			let long1 = 114.232984;
+			var lat1 = 22.472872;
+			var long1 = 114.232984;
 			if(!_isClicked){
 				lat1 = 22.472609;
 				long1 = 114.226282;
