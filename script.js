@@ -113,7 +113,7 @@ function renderPlaces(places) {
     });
 }
 
-var _loaded = false;
+var _loaded = true;
 
 AFRAME.registerComponent('rotation-reader', {
   tick: function () {
