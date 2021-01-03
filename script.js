@@ -85,6 +85,7 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
 		model.setAttribute('id', place.id);
+		model.setAttribute('gps-entity-place-added', '');
 		
         setModel(models[place.model], model);
 
@@ -160,5 +161,5 @@ AFRAME.registerComponent('gps-entity-place-added', {
 			_loaded = true;
 		}
 	}
-});
+}0);
 
