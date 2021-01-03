@@ -4,6 +4,8 @@ window.onload = () => {
 
     let places = staticLoadPlaces();
     renderPlaces(places);
+	
+	
 };
 
 function staticLoadPlaces() {
@@ -109,5 +111,11 @@ AFRAME.registerComponent('rotation-reader', {
 	const div = document.querySelector('.gpsinfo');
     div.innerText = "x: " + this.el.object3D.position.x + "; z: " + this.el.object3D.position.z;
 	
+	const scene = document.querySelector('a-scene');
+	ent = scene.querySelector('a-entity');
+	
+	div.innerText += "\n "+ ent..getAttribute('position').x ;
+	
   }
 });
+
