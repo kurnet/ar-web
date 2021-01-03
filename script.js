@@ -155,12 +155,8 @@ AFRAME.registerComponent('rotation-reader', {
 });
 
 AFRAME.registerComponent('gps-entity-place-added', {
-	init: function(details){
-		console.log(details);
-		if(details.component.id == 'first'){
-			alert("Loaded");
-			_loaded = true;
-		}
+	init: function(){
+		_loaded = true;
 	}
 });
 
