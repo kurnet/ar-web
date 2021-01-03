@@ -97,15 +97,15 @@ function renderPlaces(places) {
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
 			
-			var lat1 = 22.472872;
-			var long1 = 114.232984;
-			if(!_isClicked){
-				lat1 = 22.472609;
-				long1 = 114.226282;
-			}
-			_isClicked = !_isClicked;
+			//var lat1 = 22.472872;
+			//var long1 = 114.232984;
+			//if(!_isClicked){
+			//	lat1 = 22.472609;
+			//	long1 = 114.226282;
+			//}
+			//_isClicked = !_isClicked;
 			
-			entity.setAttribute('gps-entity-place', 'latitude: ${lat1}; longitude: ${long1};');
+			//entity.setAttribute('gps-entity-place', 'latitude: ${lat1}; longitude: ${long1};');
 				
         });
 
