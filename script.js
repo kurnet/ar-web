@@ -83,7 +83,7 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
 		model.setAttribute('id', place.id);
 		
         setModel(models[place.model], model);
@@ -105,7 +105,7 @@ function renderPlaces(places) {
 			}
 			_isClicked = !_isClicked;
 			
-			entity.setAttribute('gps-entity-place', `latitude: ${lat1}; longitude: ${long1};`);
+			entity.setAttribute('gps-entity-place', 'latitude: ${lat1}; longitude: ${long1};');
 				
         });
 
