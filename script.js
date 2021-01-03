@@ -114,7 +114,7 @@ AFRAME.registerComponent('rotation-reader', {
 	const scene = document.querySelector('a-scene');
 	ent = scene.querySelector('a-entity');
 	
-	div.innerText += "\n "+ ent.getAttribute('position') ;
+	console.log(ent.getAttribute('position'));
 	
   }
 });
