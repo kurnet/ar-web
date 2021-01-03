@@ -112,13 +112,20 @@ AFRAME.registerComponent('rotation-reader', {
     //console.log(this.el.object3D.position);
 	
 	const div = document.querySelector('.gpsinfo');
+	
+	let curPos = this.el.object3D.position;
     div.innerText = "x: " + this.el.object3D.position.x + "; z: " + this.el.object3D.position.z;
 	
 	const scene = document.querySelector('a-scene');
 	ent = scene.querySelector('a-entity#first');
 	
-	console.log(ent);
+	let objPos = ent.getAttribute('position');	
 	div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
+	
+	let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPox.y, 2));
+	div.innerText += "\n Dist: " + dist + " m";
+	
+	div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
 	
   }
 });
