@@ -100,6 +100,8 @@ function renderPlaces(places) {
     });
 }
 
+var _loaded = false;
+
 AFRAME.registerComponent('rotation-reader', {
   tick: function () {
     // `this.el` is the element.
@@ -117,16 +119,26 @@ AFRAME.registerComponent('rotation-reader', {
     div.innerText = "x: " + this.el.object3D.position.x + "; z: " + this.el.object3D.position.z;
 	
 	const scene = document.querySelector('a-scene');
-	ent = scene.querySelector('a-entity#first');
 	
-	let objPos = ent.getAttribute('position');	
-	div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
-	
-	let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
-	div.innerText += "\n Dist: " + dist + " m";
-	
-	div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
-	
+	if(_loaded){
+		ent = scene.querySelector('a-entity#first');
+		
+		let objPos = ent.getAttribute('position');	
+		div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
+		
+		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
+		div.innerText += "\n Dist: " + dist + " m";
+		
+		div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+	}
   }
 });
+
+AFRAME.registerComponent('gps-entity-place-added', {
+	init: function(details){
+		if(details.id == 'first'){
+			_loaded = true;
+		}
+	}
+);}
 
