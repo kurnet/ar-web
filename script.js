@@ -136,20 +136,21 @@ AFRAME.registerComponent('rotation-reader', {
 	
 	if(_loaded){
 		ent = scene.querySelector('a-entity#first');
-		
-		let objPos = ent.getAttribute('position');	
-		div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
-		
-		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
-		div.innerText += "\n Dist: " + dist + " m";
-		
-		div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
-		
-		//if(dist > 50){
-		//	ent.setAttribute('visible', false);
-		//}else{
-		//	ent.setAttribute('visible', true);
-		//}
+		if(ent != null){
+			let objPos = ent.getAttribute('position');	
+			div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
+			
+			let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
+			div.innerText += "\n Dist: " + dist + " m";
+			
+			div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
+			
+			//if(dist > 50){
+			//	ent.setAttribute('visible', false);
+			//}else{
+			//	ent.setAttribute('visible', true);
+			//}
+		}
 	}
   }
 });
