@@ -21,8 +21,8 @@ function staticLoadPlaces() {
 		{
             name: 'Articuno',
             location: {
-                lat: 22.471746,
-                lng: 114.226368,
+                lat: 22.368045,
+                lng: 114.110297,
             },
 			model: 1
         },
