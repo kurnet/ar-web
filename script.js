@@ -124,9 +124,9 @@ AFRAME.registerComponent('rotation-reader', {
 	
 	const scene = document.querySelector('a-scene');
 	
-	if(_loaded){
+	//if(_loaded){
 		ent = scene.querySelector('a-entity#first');
-		if(ent != null){
+		//if(ent != null){
 			let objPos = ent.getAttribute('position');	
 			div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
 			
@@ -135,8 +135,8 @@ AFRAME.registerComponent('rotation-reader', {
 			
 			div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
 			
-		}
-	}
+		//}
+	//}
   }
 });
 
