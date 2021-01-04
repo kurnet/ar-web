@@ -119,13 +119,15 @@ AFRAME.registerComponent('rotation-reader', {
 	const scene = document.querySelector('a-scene');
 	ent = scene.querySelector('a-entity#first');
 	
-	let objPos = ent.getAttribute('position');	
-	div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
-	
-	let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
-	div.innerText += "\n Dist: " + dist + " m";
-	
-	div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+	if(ent != null){
+		let objPos = ent.getAttribute('position');	
+		div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
+		
+		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
+		div.innerText += "\n Dist: " + dist + " m";
+		
+		div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+	}
 	
   }
 });
