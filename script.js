@@ -84,6 +84,7 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 		model.setAttribute('id', place.id);
 		
+		model.setAttribute('gps-entity-place-added', '');
         setModel(models[place.model], model);
 
         //model.setAttribute('animation-mixer', '');
