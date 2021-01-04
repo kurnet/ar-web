@@ -73,7 +73,6 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-var _closer = false;
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
@@ -97,15 +96,6 @@ function renderPlaces(places) {
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
-			
-			var lat1 = 22.472872;
-            var lng1 = 114.232984;
-			if(!_closer){
-				_closer = !_closer;
-				lat1= 22.472609;
-                lng1= 114.226282;
-			}
-			entity.setAttribute('gps-entity-place', `latitude: ${lat1}; longitude: ${lng1};`);
 			
         });
 
@@ -153,6 +143,11 @@ AFRAME.registerComponent('gps-entity-place-added', {
 		console.log(this);
 		if(this.el.id == "first"){
 			_firstCheck = true;
+		}
+		
+		let _di = this.el.getAttribute('distance');
+		if(_di < 50){
+			_this.el.setAttribute('visible', false);
 		}
 	}
 });
