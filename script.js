@@ -101,6 +101,7 @@ function renderPlaces(places) {
     });
 }
 
+var _firstCheck = false;
 AFRAME.registerComponent('rotation-reader', {
   tick: function () {
     // `this.el` is the element.
@@ -120,7 +121,7 @@ AFRAME.registerComponent('rotation-reader', {
 	const scene = document.querySelector('a-scene');
 	ent = scene.querySelector('a-entity#first');
 	
-	if(ent != null){
+	if(_firstCheck == true){
 		let objPos = ent.getAttribute('position');	
 		div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
 		
@@ -138,5 +139,8 @@ AFRAME.registerComponent('gps-entity-place-added', {
 		console.log("Added");
 		
 		console.log(this);
+		if(this.el.id == "first"){
+			_firstCheck = true;
+		}
 	}
 });
