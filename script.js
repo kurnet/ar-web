@@ -119,7 +119,7 @@ AFRAME.registerComponent('rotation-reader', {
 	const scene = document.querySelector('a-scene');
 	ent = scene.querySelector('a-entity#first');
 	
-	if(ent != undefined){
+	if(ent != null){
 		let objPos = ent.getAttribute('position');	
 		div.innerText += "\n X: "+ ent.getAttribute('position').x + "\n Z: "+ ent.getAttribute('position').z ;
 		
@@ -130,4 +130,10 @@ AFRAME.registerComponent('rotation-reader', {
 	}
 	
   }
+});
+
+AFRAME.registerComponent('gps-entity-place-added', {
+	init: function(){
+		console.log("Added");
+	}
 });
