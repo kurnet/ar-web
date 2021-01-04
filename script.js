@@ -22,8 +22,8 @@ function staticLoadPlaces() {
 		{
             name: 'Articuno',
             location: {
-                lat: 22.368045,
-                lng: 114.110297,
+                lat: 22.472609,
+                lng: 114.226282,
             },
 			model: 1,
 			id: 'second'
@@ -128,7 +128,7 @@ AFRAME.registerComponent('rotation-reader', {
 		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
 		div.innerText += "\n Dist: " + dist + " m";
 		
-		div.innerHTML += "\n AttrDist: " + ent.getAttribute('distance');
+		div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
 	}
 	
   }
