@@ -135,6 +135,8 @@ AFRAME.registerComponent('rotation-reader', {
 		
 		if(_aDist > 50){
 			ent.setAttribute('visible', false);
+		}else{
+			ent.setAttribute('visible', true);
 		}
 	}
 	
