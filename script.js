@@ -144,10 +144,11 @@ AFRAME.registerComponent('gps-entity-place-added', {
 			_firstCheck = true;
 		}
 		
-		let _di = this.getAttribute('distance');
+		/*let _di = this.getAttribute('distance');
 		console.log(_di);
 		if(_di > 50){
 			this.el.setAttribute('visible', false);
-		}
+		}*/
+		console.log(this);
 	}
 });
