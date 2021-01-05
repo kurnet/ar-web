@@ -130,7 +130,12 @@ AFRAME.registerComponent('rotation-reader', {
 		let dist = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
 		div.innerText += "\n Dist: " + dist + " m";
 		
-		div.innerText += "\n AttrDist: " + ent.getAttribute('distance');
+		let _aDist = ent.getAttribute('distance');
+		div.innerText += "\n AttrDist: " + _aDist;
+		
+		if(_aDist > 50){
+			ent.setAttribute('visible', false);
+		}
 	}
 	
   }
@@ -144,10 +149,12 @@ AFRAME.registerComponent('gps-entity-place-added', {
 			_firstCheck = true;
 		}
 		
+		/*
 		let objPos = this.el.getAttribute('position');	
 		let _di = Math.sqrt( Math.pow(curPos.x - objPos.x, 2) + Math.pow(curPos.y - objPos.y, 2));
 		if(_di > 50){
 			this.el.setAttribute('visible', false);
 		}
+		*/
 	}
 });
