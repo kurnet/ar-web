@@ -17,7 +17,7 @@ function staticLoadPlaces() {
                 lng: 114.232984,
             },
 			model: 0,
-			id: 'first'
+			id: 'second'
         },
 		{
             name: 'Articuno',
@@ -26,7 +26,7 @@ function staticLoadPlaces() {
                 lng: 114.226374,
             },
 			model: 1,
-			id: 'second'
+			id: 'first'
         },
     ];
 }
